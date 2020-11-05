@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
   name: openfaas
-  namespace: flux-system
+  namespace: openfaas
 spec:
   interval: 10m0s
   url: https://openfaas.github.io/faas-netes/
