@@ -1,0 +1,23 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: functions
+  namespace: openfaas-fn
+  annotations:
+    filter.fluxcd.io/certinfo: semver:~1.0
+    filter.fluxcd.io/podinfo: semver:~3.1
+spec:
+  chart:
+    spec:
+      chart: openfaas
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+      ref: main
+      path: functions
+  values:
+    certinfo:
+      image: stefanprodan/certinfo:1.0.0
+    podinfo:
+      image: stefanprodan/podinfo:3.1.0
