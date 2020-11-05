@@ -26,6 +26,10 @@ spec:
     image:
       pullPolicy: IfNotPresent
       repository: emqx/emqx
+    lifecycle:
+      postStart:
+        exec:
+          command: [ "/bin/sh", "-c", "echo Hello from the postStart handler" ]
     ingress:
       dashboard:
         annotations: {}
