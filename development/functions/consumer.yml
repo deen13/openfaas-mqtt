@@ -1,0 +1,8 @@
+apiVersion: openfaas.com/v1alpha2
+kind: Function
+metadata:
+  name: mqtt-consumer
+spec:
+  name: certinfo
+  image: deenerin0/consumer:latest
+  readOnlyRootFilesystem: true
