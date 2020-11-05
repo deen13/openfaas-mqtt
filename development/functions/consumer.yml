@@ -1,8 +1,12 @@
 apiVersion: openfaas.com/v1alpha2
 kind: Function
 metadata:
-  name: mqtt-consumer
-spec:
   name: certinfo
+  labels:
+    helm.sh/chart: functions-1.0.0
+    app.kubernetes.io/version: "1.0.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  name: consumer
   image: deenerin0/consumer:latest
   readOnlyRootFilesystem: true
